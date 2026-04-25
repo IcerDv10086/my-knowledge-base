@@ -12,7 +12,7 @@ nav:
   - 首页: index.md
   - 工具与实战:
     - Git 工具使用: "004-工具与实战/版本管理与知识库工具/git工具使用.md"
-
+    - GitHub与知识库构建: "004-工具与实战/版本管理与知识库工具/github与知识库构建.md"
 exclude_docs: |
   site/**
 
