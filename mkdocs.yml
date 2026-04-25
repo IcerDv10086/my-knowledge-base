@@ -1,23 +1,19 @@
 site_name: My KB
 site_description: Personal knowledge base
-# 把下方用户名和仓库名替换成你自己的
-site_url: https://github.com/IcerDv10086/my-knowledge-base/
+site_url: https://icerdv10086.github.io/my-knowledge-base/
 
 theme:
   name: material
   language: zh
 
-docs_dir: .
+docs_dir: docs
 
 nav:
-  - 首页: README.md
+  - 首页: index.md
   - 工具与实战:
-      - Git 工具使用: "004-工具与实战/版本管理工具/git工具使用.md"
+      - Git 工具使用: "工具与实战/版本管理工具/git工具使用.md"
 
 exclude_docs: |
-  .git/**
-  .github/**
-  .vscode/**
   site/**
 
 plugins:

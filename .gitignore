@@ -7,6 +7,9 @@ $RECYCLE.BIN/
 # Node dependencies
 node_modules/
 
+# MkDocs build output
+site/
+
 # VS Code workspace settings
 .vscode/
 
