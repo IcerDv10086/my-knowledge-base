@@ -103,26 +103,18 @@ git restore 文件名
 # 取消暂存（已add未commit）
 git restore --staged 文件名
 
-# 9) 分支操作
-git branch
-git switch -c feature/notes-cleanup   # 新建并切换
-git switch main
-
-# 10) 合并分支（在main上执行）
-git merge feature/notes-cleanup
-
-# 11) 关联远端并推送
+# 9) 关联远端并推送
 git remote add origin https://github.com/<user>/<repo>.git
 git push -u origin main
 
-# 12) 拉取更新
+# 10) 拉取更新
 git pull --rebase
 
-# 13) 临时保存现场
+# 11) 临时保存现场
 git stash
 git stash pop
 
-# 14) 删除文件
+# 12) 删除文件
 # 同时删除工作区文件 + 从版本库中移除
 git rm 文件名
 
@@ -130,13 +122,17 @@ git rm 文件名
 git rm --cached 文件名
 git rm --cached -r 目录名
 
-# 15) 重命名文件或目录
+# 13) 重命名文件或目录
 # git mv 相当于 mv + git rm + git add 三步合一
 git mv 旧文件名 新文件名
 git mv 旧目录名/ 新目录名/
 
 # 提交重命名
 git commit -m "chore: 重命名目录 旧目录名 → 新目录名"
+
+# 14) list文件或目录
+git ls-files
+git ls-tree -r HEAD
 ```
 
 #### 常用工作流（知识库场景）
