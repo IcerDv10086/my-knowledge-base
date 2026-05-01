@@ -1,12 +1,12 @@
 # git 相关工具使用
 
-本质是一种**管理代码版本的工具**，在工作中IC环境主要用到的是svn，但git是目前最流行的版本管理工具。
+Git 本质上是一种**代码版本管理工具**。在 IC 工作环境中常见的是 SVN，但 Git 已是目前最主流的版本管理工具。
 
-个人的日常使用主要涉及到 github cli 创建 git 仓库 和 使用 git 工具进行版本维护。因为目前的想法是把它当作一个**网盘**，存放本人的整理后的笔记。
+我日常主要使用 GitHub CLI 创建仓库，并通过 Git 进行版本维护。当前的使用思路是把它当作一个**可追溯的网盘**，用于存放整理后的笔记。
 
 ## gh (github cli)
 
-> github 是提供代码管理的一个平台。
+> GitHub 本质是一个代码托管与协作平台。
 
 ### 登录授权
 
@@ -17,14 +17,14 @@ gh auth login
 # 查看状态
 gh auth status
 
-#增加delete_repo权限
+# 增加 delete_repo 权限
 gh auth refresh -h github.com -s delete_repo
 ```
 
-登录按提示选，这种方式可以避免手动写token，一次配置永久生效：
+登录按提示选择即可。这种方式可以避免手动输入 Token，配置一次即可长期生效：
 
 * GitHub.com（默认）
-* 协议选 HTTPS（新手最省事）
+* 协议选 HTTPS
 * 认证方式选 Login with a web browser
 * 复制验证码 → 浏览器打开链接 → 授权登录
 
@@ -32,7 +32,7 @@ gh auth refresh -h github.com -s delete_repo
 
 #### 1.仓库管理
 
-repo(repositoiry), 本意是仓库，储藏室。在工具来看，repo 是一个独立完整的项目文件夹，并有完整的版本历史记录。
+repo（repository）即仓库。在 Git 语境中，repo 是一个独立完整的项目目录，并保留完整的版本历史。
 
 ```bash
 # 克隆仓库（自动配置 origin）
@@ -47,27 +47,27 @@ gh repo view --web
 # 列出当前用户的所有仓库
 gh repo list
 
-# fork别人的项目
+# Fork 别人的项目
 gh repo fork <owner>/<repo> [--clone]
 
-# 删除仓库，不加yes会要求确认
+# 删除仓库，不加 --yes 会要求确认
 gh repo delete <owner>/<repo> [--yes]
 ```
 
-在创建仓库时，个人比较喜欢交互式方式，比较简单粗暴。
+创建仓库时，我更偏好交互式方式，步骤清晰、上手更快。
 
 #### 2.PR
 
-PR(pull requeset)，git工具实现代码协作的最核心功能。将代发开发者的修改，提交给项目维护者审核。暂时用不到这个功能。
+PR（Pull Request）是 Git 协作中最核心的机制之一，用于将开发者的修改提交给项目维护者进行审核。目前个人场景暂时用不到。
 
 ### 实践思路记录
 
-1. fork 别人的仓库，设为private，学习和测试，最终删掉。 example: `octocat/Hello-World` , 官方的测试项目
-2. crete 自己的仓库，最终删掉
+1. Fork 别人的仓库并设为 private，用于学习和测试，完成后删除。例如：`octocat/Hello-World`（官方测试项目）
+2. Create 自己的仓库进行练习，完成后删除
 
 ## git
 
-git相较于svn，是一种**分散型**的管理方式。
+Git 相较于 SVN，属于**分布式**版本管理方式。
 
 ### 基础操作
 
@@ -75,7 +75,8 @@ git相较于svn，是一种**分散型**的管理方式。
 # 1) 一次性配置身份与查看，永久生效
 git config --global user.name "你的名字"
 git config --global user.email "你的邮箱"
-git conifg --global --list
+git config --global --list # 查看当前设置
+git config --global core.quotepath false # 设置路径显示不转义中文，建议设置
 
 # 2) 初始化仓库（在当前目录）
 git init
@@ -98,9 +99,9 @@ git diff
 git diff --staged
 
 # 8) 撤销修改
-# 丢弃工作区改动（未add）
+# 丢弃工作区改动（未 add）
 git restore 文件名
-# 取消暂存（已add未commit）
+# 取消暂存（已 add 未 commit）
 git restore --staged 文件名
 
 # 9) 关联远端并推送
@@ -157,7 +158,7 @@ git push
 
 ### 功能概览
 
-git 功能众多，个人笔记场景只用到其中一小部分，以下做简要说明。
+Git 功能很多，个人笔记场景通常只会用到其中一部分，下面做简要说明。
 
 | 功能 | 说明 | 个人是否常用 |
 | --- | --- | --- |

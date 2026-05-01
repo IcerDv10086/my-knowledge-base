@@ -1,10 +1,34 @@
 site_name: My KB
 site_description: Personal knowledge base
 site_url: https://icerdv10086.github.io/my-knowledge-base/
+site_author: icerdv10086
+
+repo_url: https://github.com/icerdv10086/my-knowledge-base
+repo_name: GitHub
 
 theme:
   name: material
   language: zh
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到暗色模式
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到亮色模式
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
 
 docs_dir: docs
 
@@ -12,6 +36,8 @@ nav:
   - 首页: index.md
   - 工具与实战:
     - Git 工具使用: "004-工具与实战/版本管理与知识库工具/git工具使用.md"
+    - CVS与SVN工具使用: "004-工具与实战/版本管理与知识库工具/CVS与SVN工具使用.md"
+    - MkDocs配置与使用: "004-工具与实战/版本管理与知识库工具/mkdocs配置与使用.md"
     - GitHub与知识库构建: "004-工具与实战/版本管理与知识库工具/github与知识库构建.md"
     
 exclude_docs: |
@@ -19,3 +45,13 @@ exclude_docs: |
 
 plugins:
   - search
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - footnotes
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.details
