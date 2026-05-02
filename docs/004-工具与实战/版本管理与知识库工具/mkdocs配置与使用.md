@@ -25,9 +25,9 @@ mkdocs.yml文件中，最主要的设置分为：site、theme、nav。主体部�
 * `repo_url`：项目源码仓库地址（如 GitHub 链接，Material 主题下会自动显示在页面）。
 * `repo_name`：仓库显示名称。
 
-!!! Note:
-    1. repo_url和repo_name主要是给用户提供一个“源码入口”按钮的设置
-    2. site_author一般网页模板不会直接显示，它是网页元数据里的一个内容
+!!! note
+    1. repo_url 和 repo_name 主要用于给用户提供“源码入口”按钮。
+    2. site_author 一般不会在网页模板中直接显示，它主要用于网页元数据。
 
 ### theme
 
