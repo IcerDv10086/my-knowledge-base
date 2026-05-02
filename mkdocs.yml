@@ -21,7 +21,6 @@ theme:
         name: 切换到亮色模式
   features:
     - navigation.tabs
-    - navigation.sections
     - navigation.top
     - search.suggest
     - search.highlight
