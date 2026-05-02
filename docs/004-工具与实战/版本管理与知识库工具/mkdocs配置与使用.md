@@ -12,6 +12,8 @@ mkdocs 的功能是把 Markdown 文档快速转成干净、可部署的**静态�
 * 主内容区 Main：你写的 Markdown 正文、代码、文字
 * 页脚 Footer：底部版权、备案、版本信息
 
+静态网站通常指的是不包含数据库和后端服务器的网站，具有打开快、部署简单的特点。
+
 ## Mkdocs
 
 mkdocs.yml文件中，最主要的设置分为：site、theme、nav。主体部分是我们编写的markdown文件内容。对于脚注可以使用theme.footer配置自定义。

@@ -3,9 +3,6 @@ site_description: Personal knowledge base
 site_url: https://icerdv10086.github.io/my-knowledge-base/
 site_author: icerdv10086
 
-repo_url: https://github.com/icerdv10086/my-knowledge-base
-repo_name: GitHub
-
 theme:
   name: material
   language: zh
@@ -35,10 +32,15 @@ docs_dir: docs
 nav:
   - 首页: index.md
   - 工具与实战:
-    - Git 工具使用: "004-工具与实战/版本管理与知识库工具/git工具使用.md"
-    - CVS与SVN工具使用: "004-工具与实战/版本管理与知识库工具/CVS与SVN工具使用.md"
-    - MkDocs配置与使用: "004-工具与实战/版本管理与知识库工具/mkdocs配置与使用.md"
-    - GitHub与知识库构建: "004-工具与实战/版本管理与知识库工具/github与知识库构建.md"
+    - 版本管理与知识库工具:
+      - Git 工具使用: "004-工具与实战/版本管理与知识库工具/git工具使用.md"
+      - CVS与SVN工具使用: "004-工具与实战/版本管理与知识库工具/CVS与SVN工具使用.md"
+      - MkDocs配置与使用: "004-工具与实战/版本管理与知识库工具/mkdocs配置与使用.md"
+      - GitHub与知识库构建: "004-工具与实战/版本管理与知识库工具/github与知识库构建.md"
+    - 系统和文本:
+      - YAML 语法手册: "004-工具与实战/系统与文本/yaml语法手册.md"
+      - Markdown 语法手册: "004-工具与实战/系统与文本/markdwon语法手册.md"
+      - JSON 语法手册: "004-工具与实战/系统与文本/json语法手册.md"
     
 exclude_docs: |
   site/**
