@@ -106,3 +106,27 @@ mkdocs.yml文件中，最主要的设置分为：site、theme、nav。主体部�
         * 排除草稿目录（如 `drafts/**`）。
         * 排除模板目录（如 `templates/**`）。
         * 排除构建产物目录（如 `site/**`，防止被再次处理）。
+
+### 图表渲染
+
+图表是理解复杂技术关系和系统结构的有效工具。MkDocs Material 支持通过 Mermaid 渲染流程图、时序图、状态图等常见图表。
+
+Mermaid 图表的渲染通常依赖 `pymdownx.superfences` 扩展，通过自定义代码块 fence，将 `mermaid` 代码块识别并渲染为图表。如下所示：
+
+```yaml
+- pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+                class: mermaid
+                format: !!python/name:pymdownx.superfences.fence_code_format
+```
+
+完成配置后，即可在 Markdown 中直接编写 Mermaid 图表。
+
+如需进一步自定义 Mermaid 的主题、配色或初始化参数，可新增 `docs/javascripts/mermaid.mjs`，并在 `mkdocs.yml` 中通过 `extra_javascript` 引入该脚本。
+
+---
+
+## 参考资料
+
+* [mkdocs官方文档](https://squidfunk.github.io/mkdocs-material)
