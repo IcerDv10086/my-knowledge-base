@@ -30,7 +30,14 @@ docs_dir: docs
 
 nav:
   - 首页: index.md
+  - 验证语言与UVM:
+    - IC专用语法:
+      - 数字模拟混合信号建模相关总结: "001-验证语言与UVM/IC专用语法/数字模拟混合信号建模相关总结.md"
   - 工具与实战:
+    - EDA工具验证高频:
+      - Verdi 覆盖率豁免避坑指南: "004-工具与实战/EDA工具验证高频/Verdi覆盖率豁免避坑指南.md"
+      - VCS仿真资源分析（1）-reportstats: "004-工具与实战/EDA工具验证高频/VCS仿真资源分析（1）-reportstats.md"
+      - VCS仿真资源分析（2）-simprofile与profrpt: "004-工具与实战/EDA工具验证高频/VCS仿真资源分析（2）-simprofile与profrpt.md"
     - 版本管理与知识库工具:
       - Git 工具使用: "004-工具与实战/版本管理与知识库工具/git工具使用.md"
       - CVS与SVN工具使用: "004-工具与实战/版本管理与知识库工具/CVS与SVN工具使用.md"
@@ -40,6 +47,8 @@ nav:
       - YAML 语法手册: "004-工具与实战/系统与文本/yaml语法手册.md"
       - Markdown 语法手册: "004-工具与实战/系统与文本/markdwon语法手册.md"
       - JSON 语法手册: "004-工具与实战/系统与文本/json语法手册.md"
+  - 验证流程与规范体系:
+    - 后仿流程总览: "006-验证流程与规范体系/后仿流程总览.md"
     
 exclude_docs: |
   site/**
