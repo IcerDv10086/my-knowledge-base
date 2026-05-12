@@ -1,23 +1,23 @@
-# VCS 仿真资源分析（2）：simprofile 与 profrpt
+# VCS工具的仿真资源分析（2）
 
 > 来源：<https://www.cnblogs.com/cmyxjcc/p/18980524>
-> 说明：本文为原文解析整理版，聚焦 Unified Simulation Profiler 的落地流程。
+> 说明：按原文风格整理，重点保留选项含义和 `profrpt` 视图使用方式。
 
-## 1. 工具定位
+`Unified Simulation Profiler` 是 VCS 自带的资源分析能力，适合在“仿真能跑但跑得慢/吃内存”的阶段做瓶颈定位。相比 `-reportstats`，它会更重，但也更细。
 
-`simprofile` 用于在仿真过程中采集 CPU/内存画像，`profrpt` 用于生成可分析报告。
+## 1. 主要功能
 
-适合场景：
+- 性能分析：定位 CPU 时间花在哪些模块/实例。
+- 内存分析：定位内存峰值来源和增长路径。
+- 报告输出：生成可追踪、可对比的分析报告。
 
-- case 运行时间异常增长
-- 内存峰值难以定位
-- 优化前后需要量化对比
+## 2. 使用方法
 
-## 2. 基本流程
+典型流程：
 
-1. 编译阶段添加 `-simprofile`。
-2. 运行阶段添加 `-simprofile <args>`。
-3. 使用 `profrpt` 对 `simprofile_dir` 进行报表分析。
+1. 编译阶段增加 `-simprofile`。
+2. 仿真阶段增加 `-simprofile <args>`。
+3. 使用 `profrpt` 基于数据库生成分析报告。
 
 示例：
 
@@ -27,79 +27,89 @@ vcs -simprofile [compile_options]
 profrpt simprofile_dir -view time_all -format text
 ```
 
-## 3. 常见参数
+## 3. 选项 simprofile 及其参数
 
-`-simprofile` 常见 args：
+常见参数：
 
-- `time`：CPU 时间分析
-- `mem`：内存分析
-- `noprof`：不采样（降低影响）
-- `noreport`：不直接生成报告
+- `time`：采集 CPU 时间相关信息。
+- `mem`：采集内存相关信息。
+- `noprof`：不做采样（用于控制性能影响）。
+- `noreport`：不直接生成报告文件。
 
-实践建议：
+常见产物：
 
-- 不要同时盲目收集所有数据，先明确目标（时间或内存）。
-- 编译、运行两阶段选项要配套，避免“开了但没采到”。
+- `simprofile_dir`：核心数据库。
+- `profileReport` / `profileReport.html`：概览信息。
 
-## 4. 关键产物
+注意事项：
 
-仿真后通常会得到：
+- 编译和运行阶段的 profile 配置要一致。
+- 已有旧目录时要明确输出路径，避免混淆。
+- 建议按场景重命名报告，便于回归对比。
 
-- `simprofile_dir`：核心数据库
-- `profileReport` / `profileReport.html`：概览信息
+## 4. 脚本 profrpt
 
-建议：
-
-- 用独立路径保存数据库，避免与旧结果混淆。
-- 用可读文件名记录场景（如 case、seed、日期）。
-
-## 5. profrpt 常用视图
-
-命令骨架：
+命令格式：
 
 ```shell
-profrpt simprofile_dir -view view1[+view2] -format text|html|ALL -output <name>
+profrpt simprofile_dir -view view1[+view2[+...]] \
+ [-format text|html|ALL] [-output <name>] \
+ [-snapshot [delta|incr|delta+incr]] \
+ [-timeline [dynamic_memory_type_or_class+...]]
 ```
 
-常见时间视图：
+### 4.1 视图类型说明
+
+时间相关常用视图：
 
 - `time_summary`
 - `time_inst`
 - `time_mod`
 - `time_constr`
+- `time_solver`
+- `time_callercallee`
 - `time_all`
 
-常见内存视图：
+内存相关常用视图：
 
 - `mem_summary`
 - `mem_inst`
 - `mem_mod`
+- `mem_constr`
 - `dynamic_mem`
 - `dynamic_mem+stack`
+- `mem_solver`
+- `mem_callercallee`
 - `mem_all`
 
-## 6. 进阶分析
-
-- 快照：
+### 4.2 内存快照机制
 
 ```shell
 profrpt simprofile_dir -view mem_all -snapshot delta
 ```
 
-- 时间线：
+- `delta`：内存有变化就抓快照。
+- `incr`：只在内存增长时抓快照。
+
+### 4.3 时间线机制
 
 ```shell
 profrpt simprofile_dir -view mem_all -timeline vcs_DA+vcs_AA
 ```
 
-- 差分对比：
+可按动态内存类型过滤时间线，例如动态数组、队列、关联数组等。
+
+### 4.4 累计与比较视图
+
+- 累计视图：合并多个数据库观察整体趋势。
+- 比较视图：对比两次仿真差异。
 
 ```shell
 profrpt -view ALL -diff simprofile_dir simprofile_dir.1 -output diff
 ```
 
-## 7. 落地经验
+## 5. 实战建议
 
-- 先用 `time_summary`/`mem_summary` 粗定位，再下钻实例/模块视图。
-- 基准对比必须保证输入一致（case/seed/tool version）。
-- 将报告纳入回归产物，形成长期性能趋势。
+- 先看 summary，再下钻 inst/mod，避免一上来就看细节视图。
+- 时间和内存问题分开采样，报告更干净、结论更明确。
+- 对比实验必须固定 case、seed、工具版本和运行环境。
