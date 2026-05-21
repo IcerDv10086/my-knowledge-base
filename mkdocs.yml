@@ -30,73 +30,83 @@ docs_dir: docs
 
 nav:
   - 首页: index.md
-  - 验证语言与UVM:
-    - 核心编程: 
-      - 调度语义: "001-验证语言与UVM/核心编程/SystemVerilog/调度语义.md"
-      - 时钟块的使用: "001-验证语言与UVM/核心编程/SystemVerilog/时钟块的使用.md"
-      - 仿真单位和仿真精度: "001-验证语言与UVM/核心编程/SystemVerilog/仿真单位和仿真精度.md"
+  - 验证语言:
+    - SystemVerilog:
+      - 调度语义: "01-验证语言/SystemVerilog/调度语义.md"
+      - 时钟块的使用: "01-验证语言/SystemVerilog/时钟块的使用.md"
+      - 仿真单位和仿真精度: "01-验证语言/SystemVerilog/仿真单位和仿真精度.md"
+      - 数字模拟混合信号建模相关总结: "01-验证语言/SystemVerilog/数字模拟混合信号建模相关总结.md"
     - UVM:
-      - 00-前言: "002-方法学/UVM/00-前言.md"
-      - 01-factory机制: "002-方法学/UVM/01-factory机制.md"
-      - 02-uvm仿真运行的核心机制: "002-方法学/UVM/02-uvm仿真运行的核心机制.md"
-      - 03-sequence机制: "002-方法学/UVM/03-sequence机制_001.md"
-      - 04-TLM端口: "002-方法学/UVM/04-TLM端口.md"
-      - 05-寄存器模型机制: "002-方法学/UVM/05-寄存器模型机制.md"
-      - 06-config_db与resource_db机制: "002-方法学/UVM/06-config_db与resource_db机制.md"
-      - 07-报告体系机制: "002-方法学/UVM/07-报告体系机制.md"
-      - 08-objection机制深化: "002-方法学/UVM/08-objection机制深化.md"
-      - 09-sequencer仲裁与响应路径: "002-方法学/UVM/09-sequencer仲裁与响应路径.md"
-      - 10-transaction recording与printer_packer: "002-方法学/UVM/10-transaction recording与printer_packer.md"
-      - 11-callback机制与工程扩展点: "002-方法学/UVM/11-callback机制与工程扩展点.md"      
+      - 00-前言: "01-验证语言/UVM/00-前言.md"
+      - 01-factory机制: "01-验证语言/UVM/01-factory机制.md"
+      - 02-uvm仿真运行的核心机制: "01-验证语言/UVM/02-uvm仿真运行的核心机制.md"
+      - 03-sequence机制: "01-验证语言/UVM/03-sequence机制_001.md"
+      - 04-TLM端口: "01-验证语言/UVM/04-TLM端口.md"
+      - 05-寄存器模型机制: "01-验证语言/UVM/05-寄存器模型机制.md"
+      - 06-config_db与resource_db机制: "01-验证语言/UVM/06-config_db与resource_db机制.md"
+      - 07-报告体系机制: "01-验证语言/UVM/07-报告体系机制.md"
+      - 08-objection机制深化: "01-验证语言/UVM/08-objection机制深化.md"
+      - 09-sequencer仲裁与响应路径: "01-验证语言/UVM/09-sequencer仲裁与响应路径.md"
+      - 10-transaction recording与printer_packer: "01-验证语言/UVM/10-transaction recording与printer_packer.md"
+      - 11-callback机制与工程扩展点: "01-验证语言/UVM/11-callback机制与工程扩展点.md"
     - 环境与胶水语言:
-      - 解释器与shebang: "001-验证语言与UVM/环境与胶水语言/解释器与shebang.md"
-      - 正则匹配参考表: "001-验证语言与UVM/环境与胶水语言/正则匹配参考表.md"
-      - linux类型与shell: "001-验证语言与UVM/环境与胶水语言/linux类型与shell.md"
-      - linux指令: "001-验证语言与UVM/环境与胶水语言/linux指令.md"
-      - WSL: "001-验证语言与UVM/环境与胶水语言/wsl.md"
-      - LFS原理: "001-验证语言与UVM/环境与胶水语言/LFS原理.md"
-      - LFS指令: "001-验证语言与UVM/环境与胶水语言/LFS指令.md"
-    - IC专用语法:
-      - 数字模拟混合信号建模相关总结: "001-验证语言与UVM/IC专用语法/数字模拟混合信号建模相关总结.md"
-  - 工具与实战:
+      - 解释器与shebang: "01-验证语言/环境与胶水语言/解释器与shebang.md"
+      - 正则匹配参考表: "01-验证语言/环境与胶水语言/正则匹配参考表.md"
+      - linux类型与shell: "01-验证语言/环境与胶水语言/linux类型与shell.md"
+      - linux指令: "01-验证语言/环境与胶水语言/linux指令.md"
+      - WSL: "01-验证语言/环境与胶水语言/wsl.md"
+      - LFS原理: "01-验证语言/环境与胶水语言/LFS原理.md"
+      - LFS指令: "01-验证语言/环境与胶水语言/LFS指令.md"
+  - 协议规范:
+    - 接口与总线概述: "02-协议规范/接口与总线概述.md"
+  - 工具链:
     - EDA工具了解篇:
-      - VCS 常用命令速查: "004-工具与实战/EDA工具了解篇/vcs-cmd.md"
-      - wavedrom 时序绘图: "004-工具与实战/EDA工具了解篇/wavedrom使用总结.md"
+      - VCS 常用命令速查: "03-工具链/EDA工具了解篇/vcs-cmd.md"
+      - wavedrom 时序绘图: "03-工具链/EDA工具了解篇/wavedrom使用总结.md"
+      - PrimeTime与STA: "03-工具链/EDA工具了解篇/PrimeTime与STA.md"
     - EDA工具验证高频:
-      - Verdi 覆盖率豁免避坑指南: "004-工具与实战/EDA工具验证高频/Verdi覆盖率豁免避坑指南.md"
-      - VCS仿真资源分析（1）-reportstats: "004-工具与实战/EDA工具验证高频/VCS仿真资源分析（1）-reportstats.md"
-      - VCS仿真资源分析（2）-simprofile与profrpt: "004-工具与实战/EDA工具验证高频/VCS仿真资源分析（2）-simprofile与profrpt.md"
+      - Verdi 覆盖率豁免指南: "03-工具链/EDA工具验证高频/Verdi覆盖率豁免避坑指南.md"
+      - VCS仿真资源分析（1）: "03-工具链/EDA工具验证高频/VCS仿真资源分析（1）-reportstats.md"
+      - VCS仿真资源分析（2）: "03-工具链/EDA工具验证高频/VCS仿真资源分析（2）-simprofile与profrpt.md"
+    - VIP实战:
+      - I2C_VIP使用总结: "03-工具链/VIP实战/I2C_VIP使用总结.md"
     - 版本管理与知识库工具:
-      - Git 工具使用: "004-工具与实战/版本管理与知识库工具/git工具使用.md"
-      - CVS与SVN工具使用: "004-工具与实战/版本管理与知识库工具/CVS与SVN工具使用.md"
-      - MkDocs配置与使用: "004-工具与实战/版本管理与知识库工具/mkdocs配置与使用.md"
-      - GitHub与知识库构建: "004-工具与实战/版本管理与知识库工具/github与知识库构建.md"
-    - 系统和文本:
-      - YAML 语法手册: "004-工具与实战/系统与文本/yaml语法手册.md"
-      - Markdown 语法手册: "004-工具与实战/系统与文本/markdwon语法手册.md"
-      - JSON 语法手册: "004-工具与实战/系统与文本/json语法手册.md"
-  - 项目与总结:
+      - Git 工具使用: "03-工具链/版本管理与知识库工具/git工具使用.md"
+      - CVS与SVN工具使用: "03-工具链/版本管理与知识库工具/CVS与SVN工具使用.md"
+      - MkDocs配置与使用: "03-工具链/版本管理与知识库工具/mkdocs配置与使用.md"
+      - GitHub与知识库构建: "03-工具链/版本管理与知识库工具/github与知识库构建.md"
+    - 系统与文本:
+      - YAML 语法手册: "03-工具链/系统与文本/yaml语法手册.md"
+      - Markdown 语法手册: "03-工具链/系统与文本/markdwon语法手册.md"
+      - JSON 语法手册: "03-工具链/系统与文本/json语法手册.md"
+  - 项目实战:
     - 流片逃逸问题复盘:
-      - VCM抖动计算异常: "005-项目与总结/流片逃逸问题复盘/vcm抖动计算异常.md"
-      - I3C Pad IBI时序异常: "005-项目与总结/流片逃逸问题复盘/i3c_pad_ibi时序异常.md"
-      - 指纹多帧中断抢跑: "005-项目与总结/流片逃逸问题复盘/指纹多帧中断抢跑.md"
-      - 跨时钟域同步异常: "005-项目与总结/流片逃逸问题复盘/跨时钟域同步异常/跨时钟域同步异常.md"
-  - 验证流程与规范体系:
-    - ASIC设计流程: "006-验证流程与规范体系/ASIC_DESIGN_FLOW.md"
+      - VCM抖动计算异常: "04-项目实战/流片逃逸问题复盘/vcm抖动计算异常.md"
+      - I3C Pad IBI时序异常: "04-项目实战/流片逃逸问题复盘/i3c_pad_ibi时序异常.md"
+      - 指纹多帧中断抢跑: "04-项目实战/流片逃逸问题复盘/指纹多帧中断抢跑.md"
+      - 跨时钟域同步异常: "04-项目实战/流片逃逸问题复盘/跨时钟域同步异常/跨时钟域同步异常.md"
+  - 流程规范:
+    - ASIC设计流程: "05-流程规范/ASIC_DESIGN_FLOW.md"
+    - Pattern命令与格式规范: "05-流程规范/Pattern命令与格式规范.md"
     - 数字验证流程:
-      - 数字IC验证全流程实践: "006-验证流程与规范体系/数字验证流程/数字IC验证全流程实践.md"
-      - 从Spec到环境: "006-验证流程与规范体系/数字验证流程/数字IC验证前期流程详解.md"
-      - 后仿流程总览: "006-验证流程与规范体系/数字验证流程/后仿流程总览.md"
-      - 模板与检查清单:
-        - DV_checklist: "006-验证流程与规范体系/数字验证流程/Template/DV_checklist.md"
-        - DV_testplan: "006-验证流程与规范体系/数字验证流程/Template/DV_testplan.md"
-        - DV_testplan2: "006-验证流程与规范体系/数字验证流程/Template/DV_testplan2.md"
-        - RTL反串讲思路: "006-验证流程与规范体系/数字验证流程/Template/RTL反串讲思路.md"
-        - 验证环境框架模板: "006-验证流程与规范体系/数字验证流程/Template/验证环境框架模板.md"
-  - AI编程学习实践:
-    - Ai_coding发展: "010-AI编程学习实践/Ai_coding发展.md"
-    - LLM-chatgpt原理: "010-AI编程学习实践/LLM-chatgpt原理.md"
-    - Prompt: "010-AI编程学习实践/Prompt.md"
+      - 数字IC验证全流程实践: "05-流程规范/数字验证流程/数字IC验证全流程实践.md"
+      - 从Spec到环境: "05-流程规范/数字验证流程/数字IC验证前期流程详解.md"
+      - 后仿流程总览: "05-流程规范/数字验证流程/后仿流程总览.md"
+  - 软技能:
+    - 提问技巧: "06-软技能/提问.md"
+  - AI总结:
+    - Ai_coding发展: "07-AI总结/Ai_coding发展.md"
+    - LLM-chatgpt原理: "07-AI总结/LLM-chatgpt原理.md"
+    - Prompt: "07-AI总结/Prompt.md"
+    - skill使用: "07-AI总结/skill使用.md"
+  - 附录:
+    - 术语与风格规范: "08-附录/000-术语与风格规范.md"
+    - 模板与检查清单:
+      - DV_checklist: "08-附录/Template/DV_checklist.md"
+      - DV_testplan: "08-附录/Template/DV_testplan.md"
+      - DV_testplan2: "08-附录/Template/DV_testplan2.md"
+      - RTL反串讲思路: "08-附录/Template/RTL反串讲思路.md"
+      - 验证环境框架模板: "08-附录/Template/验证环境框架模板.md"
 
 exclude_docs: |
   site/**
