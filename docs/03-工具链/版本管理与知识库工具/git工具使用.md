@@ -134,6 +134,9 @@ git commit -m "chore: 重命名目录 旧目录名 → 新目录名"
 # 14) list文件或目录
 git ls-files
 git ls-tree -r HEAD
+
+# 15) 查看当前仓库体积
+git count --objects -vH 
 ```
 
 #### 常用工作流（知识库场景）
