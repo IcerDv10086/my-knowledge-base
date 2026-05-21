@@ -29,24 +29,12 @@ theme:
 docs_dir: docs
 
 nav:
-  - 术语与风格规范: "000-术语与风格规范.md"
   - 首页: index.md
   - 验证语言与UVM:
-    - 核心编程:
+    - 核心编程: 
       - 调度语义: "001-验证语言与UVM/核心编程/SystemVerilog/调度语义.md"
       - 时钟块的使用: "001-验证语言与UVM/核心编程/SystemVerilog/时钟块的使用.md"
       - 仿真单位和仿真精度: "001-验证语言与UVM/核心编程/SystemVerilog/仿真单位和仿真精度.md"
-    - 环境与胶水语言:
-      - 解释器与shebang: "001-验证语言与UVM/环境与胶水语言/解释器与shebang.md"
-      - 正则匹配参考表: "001-验证语言与UVM/环境与胶水语言/正则匹配参考表.md"
-      - linux类型与shell: "001-验证语言与UVM/环境与胶水语言/linux类型与shell.md"
-      - linux指令: "001-验证语言与UVM/环境与胶水语言/linux指令.md"
-      - WSL: "001-验证语言与UVM/环境与胶水语言/wsl.md"
-      - LFS原理: "001-验证语言与UVM/环境与胶水语言/LFS原理.md"
-      - LFS指令: "001-验证语言与UVM/环境与胶水语言/LFS指令.md"
-    - IC专用语法:
-      - 数字模拟混合信号建模相关总结: "001-验证语言与UVM/IC专用语法/数字模拟混合信号建模相关总结.md"
-  - 方法学:
     - UVM:
       - 00-前言: "002-方法学/UVM/00-前言.md"
       - 01-factory机制: "002-方法学/UVM/01-factory机制.md"
@@ -59,10 +47,21 @@ nav:
       - 08-objection机制深化: "002-方法学/UVM/08-objection机制深化.md"
       - 09-sequencer仲裁与响应路径: "002-方法学/UVM/09-sequencer仲裁与响应路径.md"
       - 10-transaction recording与printer_packer: "002-方法学/UVM/10-transaction recording与printer_packer.md"
-      - 11-callback机制与工程扩展点: "002-方法学/UVM/11-callback机制与工程扩展点.md"
+      - 11-callback机制与工程扩展点: "002-方法学/UVM/11-callback机制与工程扩展点.md"      
+    - 环境与胶水语言:
+      - 解释器与shebang: "001-验证语言与UVM/环境与胶水语言/解释器与shebang.md"
+      - 正则匹配参考表: "001-验证语言与UVM/环境与胶水语言/正则匹配参考表.md"
+      - linux类型与shell: "001-验证语言与UVM/环境与胶水语言/linux类型与shell.md"
+      - linux指令: "001-验证语言与UVM/环境与胶水语言/linux指令.md"
+      - WSL: "001-验证语言与UVM/环境与胶水语言/wsl.md"
+      - LFS原理: "001-验证语言与UVM/环境与胶水语言/LFS原理.md"
+      - LFS指令: "001-验证语言与UVM/环境与胶水语言/LFS指令.md"
+    - IC专用语法:
+      - 数字模拟混合信号建模相关总结: "001-验证语言与UVM/IC专用语法/数字模拟混合信号建模相关总结.md"
   - 工具与实战:
     - EDA工具了解篇:
       - VCS 常用命令速查: "004-工具与实战/EDA工具了解篇/vcs-cmd.md"
+      - wavedrom 时序绘图: "004-工具与实战/EDA工具了解篇/wavedrom使用总结.md"
     - EDA工具验证高频:
       - Verdi 覆盖率豁免避坑指南: "004-工具与实战/EDA工具验证高频/Verdi覆盖率豁免避坑指南.md"
       - VCS仿真资源分析（1）-reportstats: "004-工具与实战/EDA工具验证高频/VCS仿真资源分析（1）-reportstats.md"
@@ -81,6 +80,7 @@ nav:
       - VCM抖动计算异常: "005-项目与总结/流片逃逸问题复盘/vcm抖动计算异常.md"
       - I3C Pad IBI时序异常: "005-项目与总结/流片逃逸问题复盘/i3c_pad_ibi时序异常.md"
       - 指纹多帧中断抢跑: "005-项目与总结/流片逃逸问题复盘/指纹多帧中断抢跑.md"
+      - 跨时钟域同步异常: "005-项目与总结/流片逃逸问题复盘/跨时钟域同步异常/跨时钟域同步异常.md"
   - 验证流程与规范体系:
     - 后仿流程总览: "006-验证流程与规范体系/后仿流程总览.md"
   - AI编程学习实践:
