@@ -12,6 +12,7 @@ site/
 
 # VS Code workspace settings
 .vscode/
+.agents/
 
 # Note-taking app metadata
 .obsidian/
